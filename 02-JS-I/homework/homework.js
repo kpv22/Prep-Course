@@ -34,15 +34,15 @@ function suma(x, y) {
   // "x" e "y" son números
   // Suma "x" e "y" juntos y devuelve el valor
   // Tu código:
-  suma = x + y;
-  return suma;
+  sumar = x + y;
+  return sumar;
 }
 
 function resta(x, y) {
   // Resta "y" de "x" y devuelve el valor
   // Tu código:
-  resta = y - x;
-  return resta;
+  restar = x - y;
+  return restar;
 }
 
 function multiplica(x, y) {
@@ -55,18 +55,30 @@ function multiplica(x, y) {
 function divide(x, y) {
   // Divide "x" entre "y" y devuelve el valor
   // Tu código:
+  dividir = x / y;
+  return dividir;
 }
 
 function sonIguales(x, y) {
   // Devuelve "true" si "x" e "y" son iguales
   // De lo contrario, devuelve "false"
   // Tu código:
+  if (x === y) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function tienenMismaLongitud(str1, str2) {
   // Devuelve "true" si las dos strings tienen la misma longitud
   // De lo contrario, devuelve "false"
   // Tu código:
+  if (str1.length == str2.length) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function menosQueNoventa(num) {
