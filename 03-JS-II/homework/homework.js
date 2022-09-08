@@ -5,16 +5,12 @@ function obtenerMayor(x, y) {
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
-  if (x === y) {
-    return x, y;
-  } else {
-    if (x > y) {
-      return x;
-    } else {
-      if (y > x) {
-        return y;
-      }
-    }
+  if (x > y) {
+    return x;
+  } else if (y > x) {
+    return y;
+  } else if (x === y) {
+    return x;
   }
 }
 
@@ -22,13 +18,10 @@ function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
-
   if (edad >= 18) {
     return "Allowed";
   } else {
-    if (edad < 18) {
-      return "Not allowed";
-    }
+    return "Not allowed";
   }
 }
 
@@ -40,12 +33,10 @@ function conection(status) {
   //Devolver el estado de conexión de usuario en cada uno de los casos.
   if (status === 1) {
     return "Online";
+  } else if (status === 2) {
+    return "Away";
   } else {
-    if (status === 2) {
-      return "Away";
-    } else {
-      return "Offline";
-    }
+    return "Offline";
   }
 }
 
@@ -56,18 +47,20 @@ function saludo(idioma) {
   // Si "idioma" es "ingles", devuelve "Hello!"
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
-  if (idioma === "aleman") {
-    return "Guten Tag!";
-  } else {
-    if (idioma === "mandarin") {
+  switch (idioma) {
+    case "aleman":
+      return "Guten Tag!";
+      break;
+    case "mandarin":
       return "Ni Hao!";
-    } else {
-      if (idioma === "ingles") {
-        return "Hello!";
-      } else {
-        return "Hola!";
-      }
-    }
+      break;
+    case "ingles":
+      return "Hello!";
+      break;
+
+    default:
+      return "Hola!";
+      break;
   }
 }
 
@@ -79,7 +72,6 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
-
   switch (color) {
     case "blue":
       return "This is blue";
@@ -93,6 +85,7 @@ function colors(color) {
     case "orange":
       return "This is orange";
       break;
+
     default:
       return "Color not found";
       break;
@@ -114,7 +107,6 @@ function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
-
   if (numero < 50 && numero > 20) {
     return true;
   } else {
@@ -130,11 +122,7 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
-  if (Math.floor(numero) === numero) {
-    return true;
-  } else {
-    return false;
-  }
+  return Math.floor(numero) == numero;
 }
 
 function fizzBuzz(numero) {
@@ -193,7 +181,6 @@ function esVerdadero(valor) {
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero”
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-
   return valor ? "Soy verdadero" : "Soy falso";
 }
 
@@ -201,9 +188,9 @@ function tablaDelSeis() {
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí
-
   let tabla = [];
-  for (let i = 0; i <= 10; i++) {
+
+  for (i = 0; i <= 10; i++) {
     const resultado = 6 * i;
     tabla.push(resultado);
   }
@@ -224,12 +211,12 @@ function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
-  let contador = 0;
+  let i = 0;
   let numeroAumentado = numero;
   do {
     numeroAumentado = numeroAumentado + 5;
-    contador++;
-  } while (contador < 8);
+    i++;
+  } while (i < 8);
   return numeroAumentado;
 }
 
