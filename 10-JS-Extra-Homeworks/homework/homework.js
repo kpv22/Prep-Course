@@ -83,39 +83,68 @@ function capicua(numero) {
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  // var numeroString = numero.toString();
+  // for (var i = 0; i < numeroString.length / 2; i++) {
+  //   if (numeroString[i] !== numeroString[numeroString.length - 1 - i])
+  //     return "No es capicua";
+  // }
+  // return "Es capicua";
   var numeroString = numero.toString();
-  for (var i = 0; i < numeroString.length / 2; i++) {
-    if (numeroString[i] !== numeroString[numeroString.length - 1 - i])
-      return "No es capicua";
+  if (numeroString.split("").reverse().join("") === numeroString) {
+    return "Es capicua";
+  } else {
+    return "No es capicua";
   }
-  return "Es capicua";
 }
 
 function deleteAbc(cadena) {
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
-  var palabra = "";
-  for (var i = 0; i < cadena.length; i++){
-    if (cadena[i] !== "b" && cadena[i] !== "b" && cadena[i] !== "c") {
-      palabra += cadena[i];
+  let ns = "";
+
+  for (i = 0; i < cadena.length; i++) {
+    if (cadena[i] !== "a" && cadena[i] !== "b" && cadena[i] !== "c") {
+      ns += cadena[i];
     }
   }
-  return palabra;
+
+  return ns;
 }
 
 function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  for (i = 0; i < arr.length; i++) {
+    for (j = i; j < arr.length; j++) {
+      if (arr[i].length > arr[j].length) {
+        t = arr[i];
+        arr[i] = arr[j];
+        arr[j] = t;
+      }
+    }
+  }
+
+  return arr;
 }
 
 function buscoInterseccion(arreglo1, arreglo2) {
   //Existen dos arrays, cada uno con 5 números. A partir de ello, escribir una función que permita
-  //retornar un nuevo array con la intersección de ambos elementos. (Ej: [4,2,3] unión [1,3,4] = [3,4].
+  //retornar un nuevo array con la intersección de ambos elementos.
+  //(Ej: [4, 2, 3] unión [1,3,4] =[3, 4].
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí
+  var arr = [];
+
+  for (i = 0; i < arreglo1.length; i++) {
+    for (j = 0; j < arreglo2.length; j++) {
+      if (arreglo1[i] === arreglo2[j]) arr.push(arreglo1[i]);
+    }
+  }
+
+  return arr;
 }
 
 // No modificar nada debajo de esta línea
