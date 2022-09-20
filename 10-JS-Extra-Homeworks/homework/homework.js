@@ -89,6 +89,7 @@ function capicua(numero) {
   //     return "No es capicua";
   // }
   // return "Es capicua";
+
   var numeroString = numero.toString();
   if (numeroString.split("").reverse().join("") === numeroString) {
     return "Es capicua";

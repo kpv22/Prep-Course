@@ -40,6 +40,7 @@ function suma(x, y) {
 function resta(x, y) {
   // Resta "y" de "x" y devuelve el valor
   // Tu código:
+
   return x - y;
 }
 
@@ -59,11 +60,7 @@ function sonIguales(x, y) {
   // Devuelve "true" si "x" e "y" son iguales
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (x === y) {
-    return true;
-  } else {
-    return false;
-  }
+  return x === y ? true : false;
 }
 
 function tienenMismaLongitud(str1, str2) {
@@ -109,18 +106,17 @@ function esPar(num) {
   // Devuelve "true" si "num" es par
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (num % 2 === 0) {
+  if (num % 2 == 0) {
     return true;
   } else {
     return false;
   }
 }
-
 function esImpar(num) {
   // Devuelve "true" si "num" es impar
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (num % 2 !== 0) {
+  if (num % 2 == 1) {
     return true;
   } else {
     return false;
@@ -143,7 +139,6 @@ function elevarAlCubo(num) {
 function elevar(num, exponent) {
   // Devuelve el valor de "num" elevado al exponente dado en "exponent"
   // Tu código:
-
   return Math.pow(num, exponent);
 }
 
@@ -162,8 +157,7 @@ function redondearHaciaArriba(num) {
 function numeroRandom() {
   //Generar un número al azar entre 0 y 1 y devolverlo
   //Pista: investigá qué hace el método Math.random()
-  var num = 0;
-  return Math.round(num);
+  return Math.random();
 }
 
 function esPositivo(numero) {
@@ -171,7 +165,6 @@ function esPositivo(numero) {
   //Si el número es positivo, devolver ---> "Es positivo"
   //Si el número es negativo, devolver ---> "Es negativo"
   //Si el número es 0, devuelve false
-
   if (numero > 0) {
     return "Es positivo";
   } else if (numero < 0) {
@@ -180,7 +173,6 @@ function esPositivo(numero) {
     return false;
   }
 }
-
 function agregarSimboloExclamacion(str) {
   // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
   // Ejemplo: "hello world" pasaría a ser "hello world!"
@@ -199,7 +191,6 @@ function obtenerSaludo(nombre) {
   // Toma la string "nombre" y concatena otras string en la cadena para que tome la siguiente forma:
   // "Martin" -> "Hola Martin!"
   // Tu código:
-
   return `Hola ${nombre}!`;
 }
 
@@ -242,15 +233,9 @@ function esVocal(letra) {
     letra === "u"
   ) {
     return "Es vocal";
-  } else if (letra.length >= 2) {
+  } else if (letra.length > 0) {
     return "Dato incorrecto";
-  } else if (
-    letra !== "a" &&
-    letra !== "e" &&
-    letra !== "i" &&
-    letra !== "o" &&
-    letra !== "u"
-  ) {
+  } else {
     return "Dato incorrecto";
   }
 }
