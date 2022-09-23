@@ -28,7 +28,6 @@ function incrementarPorUno(array) {
   }
   return array;
 }
-
 function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
@@ -42,7 +41,6 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
-
   array.unshift(elemento);
   return array;
 }
@@ -53,34 +51,25 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-
   //var frase=palabras.join(" ")
   //return frase;
-
-  let string = "";
-  for (let i = 0; i < palabras.length; i++) {
-    string += ` ${palabras[i]}`;
-  }
-  return string.trim();
+  var frase = palabras.join(" ");
+  return frase;
 }
-
 function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-
   //for(let i=0;i<array.length;i++){
   //   if (array[i] === elemento) return true;
   // }
   // return false
-
-  if (array.indexOf(elemento) === -1) {
-    return false;
-  } else {
+  if (array.indexOf(elemento) !== -1) {
     return true;
+  } else {
+    return false;
   }
 }
-
 function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
@@ -102,14 +91,11 @@ function promedioResultadosTest(resultadosTest) {
   }
   return suma / resultadosTest.length;
 }
-
 function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
-  let numM = 0;
-  numM = Math.max(...numeros);
-  return numM;
+  return Math.max(...numeros);
 }
 
 function multiplicarArgumentos() {
@@ -144,7 +130,6 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario.
   //Escribe tu código aquí
-
   if (numeroDeDia === 1 || numeroDeDia === 7) {
     return "Es fin de semana";
   }
@@ -173,7 +158,6 @@ function todosIguales(arreglo) {
   }
   return true;
 }
-
 function mesesDelAño(array) {
   //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
@@ -195,7 +179,6 @@ function mesesDelAño(array) {
     return nuevoArray;
   }
 }
-
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.

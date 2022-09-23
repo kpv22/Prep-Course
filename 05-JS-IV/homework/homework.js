@@ -6,11 +6,11 @@ function crearGato(nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-  var gato = {
+  let gato = {
     nombre: nombre,
     edad: edad,
     meow: function () {
-      return `Meow!`;
+      return "Meow!";
     },
   };
   return gato;
@@ -54,13 +54,12 @@ function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-
-  var nuevoObjeto = {
+  let nvoObjeto = {
     nombre: nombre,
     email: email,
     password: password,
   };
-  return nuevoObjeto;
+  return nvoObjeto;
 }
 
 function tieneEmail(usuario) {
@@ -91,7 +90,7 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
-  if (usuario.password === password) {
+  if (usuario.password == password) {
     return true;
   } else {
     return false;
@@ -111,8 +110,7 @@ function agregarAmigo(usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // Tu código:
-  var friends = usuario.amigos;
-  friends.push(nuevoAmigo);
+  usuario.amigos.push(nuevoAmigo);
   return usuario;
 }
 
@@ -122,8 +120,7 @@ function pasarUsuarioAPremium(usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
-
-  for (var i = 0; i < usuarios.length; i++) {
+  for (let i = 0; i < usuarios.length; i++) {
     usuarios[i].esPremium = true;
   }
   return usuarios;
@@ -136,11 +133,10 @@ function sumarLikesDeUsuario(usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
-
-  var posts = usuario.posts;
-  var suma = 0;
-  for (var i = 0; i < posts.length; i++) {
-    suma = suma + posts[i].likes;
+  let post = usuario.posts;
+  let suma = 0;
+  for (let i = 0; i < post.length; i++) {
+    suma += post[i].likes;
   }
   return suma;
 }
@@ -156,8 +152,8 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
   producto.calcularPrecioDescuento = function () {
-    var descuento = producto.precio * producto.porcentajeDeDescuento;
-    var precioConDescuento = producto.precio - descuento;
+    let descuento = producto.precio * producto.porcentajeDeDescuento;
+    let precioConDescuento = producto.precio - descuento;
     return precioConDescuento;
   };
   return producto;
